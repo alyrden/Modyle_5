@@ -1,5 +1,6 @@
 import time
 
+
 class User:
     def __init__(self, nickname, password, age):
         self.nickname = nickname
@@ -14,6 +15,7 @@ class Video:
         self.time_now = 0
         self.adult_mode = adult_mode
 
+
 class UrTube:
     def __init__(self):
         self.users = []
@@ -22,8 +24,8 @@ class UrTube:
 
     def log_in(self, nickname, password):
         for user in self.users:
-                self.current_user = user
-                return
+            self.current_user = user
+            return
 
     def register(self, nickname, password, age):
         for user in self.users:
@@ -34,23 +36,23 @@ class UrTube:
         self.users.append(new_user)
 
     def log_out(self):
-            self.current_user = None
+        self.current_user = None
 
     def add(self, *videos):
         for video in videos:
-                self.videos.append(video)
-
+            self.videos.append(video)
 
     def watch_video(self, title):
-            print("Войдите в аккаунт, чтобы смотреть видео.")
+        print("Войдите в аккаунт, чтобы смотреть видео.")
+        return
+
+        if video.adult_mode and self.current_user.age < 18:
+            print("Вам нет 18 лет, пожалуйста покиньте страницу.")
             return
 
-                if video.adult_mode and self.current_user.age < 18:
-                    print("Вам нет 18 лет, пожалуйста покиньте страницу.")
-                    return
+        while video.time_now < video.duration:
+            video.time_now += 1
 
-                while video.time_now < video.duration:
-                    video.time_now += 1
 
 ur = UrTube()
 v1 = Video('Лучший язык программирования 2024 года', 200)
