@@ -17,8 +17,6 @@ class User:
     def __eq__(self, other):
         return self.nickname == other.nickname and self.password == other.password
 
-
-# Класс видео
 class Video:
     def __init__(self, title, duration, adult_mode=False):
         self.title = title
@@ -29,8 +27,6 @@ class Video:
     def __repr__(self):
         return f"Video(title='{self.title}', duration={self.duration}, adult_mode={self.adult_mode})"
 
-
-# Класс платформы UrTube
 class UrTube:
     def __init__(self):
         self.users = []
